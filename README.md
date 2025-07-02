@@ -1,32 +1,63 @@
-# CodeIgniter 4 Application Starter
+# 📚 SDLC Quiz Platform - CodeIgniter 4
 
-## What is CodeIgniter?
+**Platform quiz interaktif untuk pembelajaran Software Development Life Cycle (SDLC) dan Keamanan Perangkat Lunak**
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 🚀 Features
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+### 🎯 Quiz System
+- **Level 1**: Dasar-Dasar SDLC dan Keamanan (5 soal)
+- **Level 2**: Aplikasi dan Analisis SDLC (5 soal)  
+- **Quiz Lengkap**: Semua soal dalam satu sesi (10 soal)
+- Progress tracking dengan progress bar
+- Grading system (A-F) berdasarkan persentase
+- Review jawaban lengkap dengan kunci jawaban
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+### 🔐 Authentication System
+- **Admin Dashboard**: Akses penuh untuk manajemen
+- **User Dashboard**: Akses user untuk quiz dan feedback
+- Simple login dengan session management
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+### 🎨 Modern UI/UX
+- Responsive design dengan Materialize CSS
+- Modern card-based layout
+- Color-coded feedback (hijau untuk benar, merah untuk salah)
 
-## Installation & updates
+## 🛠️ Tech Stack
+- **Framework**: CodeIgniter 4
+- **Frontend**: Materialize CSS, HTML5, JavaScript
+- **Backend**: PHP 8.2+
+- **Session**: File-based session storage
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## ⚡ Quick Start
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+### Installation
+1. Clone repository
+2. Run `composer install`
+3. Copy `env` to `.env`
+4. Run `php spark serve --host=0.0.0.0 --port=8080`
+5. Access: `http://localhost:8080`
 
-## Setup
+## 👥 Default Credentials
+- **Admin**: admin / admin123
+- **User**: user / user123
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+## 📚 Quiz Content
+### Level 1: Dasar-Dasar SDLC dan Keamanan
+1. Tujuan utama SSDLC
+2. Perbedaan Waterfall vs Agile
+3. Inspeksi Proyek dalam SDLC
+4. Aktivitas bukan bagian Inspeksi Proyek
+5. Peran Security Advisor
+
+### Level 2: Aplikasi dan Analisis SDLC
+1. Metodologi untuk startup MVP
+2. Integrasi keamanan dalam Agile
+3. Pemodelan Ancaman (Threat Modeling)
+4. Metodologi untuk proyek berisiko tinggi
+5. Fungsi Security Champion
+
+---
+**Made with ❤️ for Software Engineering Education**
 
 ## Important Change with index.php
 
