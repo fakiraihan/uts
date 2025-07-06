@@ -1,9 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        tool name: 'SonarScanner', type: 'sonarScanner'
-    }
     environment {
         SONAR_TOKEN = credentials('sonarqube-token')
     }
@@ -20,7 +17,7 @@ pipeline {
         stage('SonarQube Analysis') {
             steps {
                 withSonarQubeEnv('SonarQube') {
-                    bat 'sonar-scanner.bat'
+                    bat 'C:\\sonar-scanner\\bin\\sonar-scanner.bat'
                 }
             }
         }
