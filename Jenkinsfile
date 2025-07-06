@@ -1,24 +1,28 @@
 pipeline {
     agent any
-    tools {
-        maven 'Maven'
+    environment {
+        SONAR_TOKEN = credentials('squ_d1080fe7195e87bc5d23dae2f78b50018edb9a26')
     }
-
     stages {
-        stage('Git Checkout') {
-            steps {
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/fakiraihan/uts']])
-                echo 'Git Checkout Completed'
-            }
+        stage('Checkout') {
+            steps { git 'https://github.com/fakiraihan/uts' }
         }
-
+        stage('Install Dependencies') {
+            steps { bat 'composer install' }
+        }
+        stage('Run PHPUnit') {
+            steps { bat 'vendor\\bin\\phpunit --configuration phpunit.xml' }
+        }
         stage('SonarQube Analysis') {
             steps {
-                withSonarQubeEnv('ServerNameSonar') {
-                    bat '''mvn clean verify sonar:sonar -Dsonar.projectKey=sonargit -Dsonar.projectName='sonargit' -Dsonar.host.url=http://localhost:9000''' //port 9000 is default for sonar
-                    echo 'SonarQube Analysis Completed'
+                withSonarQubeEnv('SonarQube') {
+                    bat 'E:\\Prog\\sonar-scanner\\bin\\sonar-scanner.bat'
                 }
             }
         }
     }
+    post {
+        failure { echo 'Pipeline gagal, cek log.' }
+    }
 }
+
