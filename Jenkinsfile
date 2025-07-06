@@ -5,7 +5,7 @@ pipeline {
     }
     stages {
         stage('Checkout') {
-            steps { git 'https://github.com/fakiraihan/uts' }
+            steps {git branch: 'main', url: 'https://github.com/fakiraihan/uts'}
         }
         stage('Install Dependencies') {
             steps { bat 'composer install' }
