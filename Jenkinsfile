@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        SONAR_TOKEN = credentials('squ_d1080fe7195e87bc5d23dae2f78b50018edb9a26')
+        SONAR_TOKEN = credentials('sonarqube-token')
     }
     stages {
         stage('Checkout') {
