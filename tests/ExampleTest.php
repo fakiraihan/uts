@@ -1,11 +1,10 @@
 <?php
+use PHPUnit\Framework\TestCase;
 
-use CodeIgniter\Test\CIUnitTestCase;
-
-class ExampleTest extends CIUnitTestCase
-{
-    public function testSomething()
+class ExampleTest extends TestCase
     {
-        $this->assertTrue(true);
+        public function testAddition()
+        {
+            $this->assertEquals(4, 2 + 2);
+        }
     }
-}
