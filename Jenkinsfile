@@ -1,5 +1,9 @@
 pipeline {
     agent any
+
+    tools {
+        tool name: 'SonarScanner', type: 'sonarScanner'
+    }
     environment {
         SONAR_TOKEN = credentials('sonarqube-token')
     }
